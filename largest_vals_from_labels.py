@@ -9,10 +9,11 @@ def largestValsFromLabels(values,labels,num_wanted,use_limit):
     lookup[values[i]] = lookup.get(values[i],[]) + [labels[i]]
     
   values = sorted(values,reverse=True)
+
   count, i = 0, 0
   while num_wanted > 0 and i < len(values):
     for j in lookup[values[i]]:
-      if lookup_table[j] != 0:
+      if lookup_table[j] != 0 and num_wanted > 0:
         count += values[i]
         lookup_table[j] -= 1
         lookup[values[i]].remove(j)
@@ -22,8 +23,8 @@ def largestValsFromLabels(values,labels,num_wanted,use_limit):
   return count
 
 
-values = [3,0,3,0,6]
-labels = [0,2,1,1,0]
-num_wanted = 4
-use_limit = 1
+values = [7,5,6,6,4,4,0,0,6]
+labels = [1,1,0,2,0,0,0,0,2]
+num_wanted = 2
+use_limit = 3
 print(largestValsFromLabels(values,labels,num_wanted,use_limit))
