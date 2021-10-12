@@ -2,9 +2,6 @@
 #of segments in the string
 
 def countSegments(s):
-  if len(s) < 1:
-    return 0
-  
   seg = 0
   for i in range(1,len(s)):
     if s[i] == ' ' and s[i-1] != ' ':
