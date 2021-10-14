@@ -9,12 +9,8 @@ def numTrees(n):
     return n
   
   sm = 0
-  for i in range(n):
-    sm += numTrees(i) + numTrees(n-1-i)
-    if i == 1 or n-1-i == 1:
-      sm -= 1
-
-  return sm
+  for i in range(n-1):
+    sm += numTrees(i) + numTrees()
 
 
-print(numTrees(6)) 
+print(numTrees(3)) 
