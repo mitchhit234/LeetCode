@@ -6,6 +6,10 @@ def minSessions(tasks,sessionTime):
   for i in tasks:
     lookup[i] = lookup.setdefault(i,0) + 1
 
+  
+
+
+
   return lookup
 
 
